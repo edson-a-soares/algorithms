@@ -31,11 +31,7 @@ namespace Karatsuba {
         /// @implements Algorithm::Karatsuba::KaratsubaInterface
         ///
     public:
-
         constexpr static int NUMBER_BASE = 10;
-            ///
-            ///
-            ///
 
         size_t multiply(std::string multiplicand, std::string multiplier) final;
             ///

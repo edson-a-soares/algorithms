@@ -11,16 +11,16 @@ protected:
 
     void SetUp() override
     {
-        karatsubaMultiplication = new KaratsubaImpl();
+        karatsuba = new KaratsubaImpl();
     }
 
     void TearDown() override
     {
-        delete karatsubaMultiplication;
-        karatsubaMultiplication = nullptr;
+        delete karatsuba;
+        karatsuba = nullptr;
     }
 
-    KaratsubaInterface * karatsubaMultiplication = nullptr;
+    KaratsubaInterface * karatsuba = nullptr;
 
 };
 
@@ -71,16 +71,16 @@ TEST_F(MultiplicationTest, InvalidFinalSizeForFillNumberExcetion) {
 
 TEST_F(MultiplicationTest, KaratsubaForFastMultiplication) {
 
-    ASSERT_EQ(0,                  karatsubaMultiplication->multiply("0",         "0"));
-    ASSERT_EQ(1,                  karatsubaMultiplication->multiply("1",         "1"));
-    ASSERT_EQ(25,                 karatsubaMultiplication->multiply("5",         "5"));
-    ASSERT_EQ(2944,               karatsubaMultiplication->multiply("46",        "64"));
-    ASSERT_EQ(53136,              karatsubaMultiplication->multiply("123",       "432"));
-    ASSERT_EQ(5332114,            karatsubaMultiplication->multiply("1234",      "4321"));
-    ASSERT_EQ(670592745,          karatsubaMultiplication->multiply("12345",     "54321"));
-    ASSERT_EQ(80779853376,        karatsubaMultiplication->multiply("123456",    "654321"));
-    ASSERT_EQ(9449772114007,      karatsubaMultiplication->multiply("1234567",   "7654321"));
-    ASSERT_EQ(9449772114007,      karatsubaMultiplication->multiply("1234567",   "7654321"));
-    ASSERT_EQ(1082152022374638,   karatsubaMultiplication->multiply("12345678",  "87654321"));
+    ASSERT_EQ(0,                  karatsuba->multiply("0",         "0"));
+    ASSERT_EQ(1,                  karatsuba->multiply("1",         "1"));
+    ASSERT_EQ(25,                 karatsuba->multiply("5",         "5"));
+    ASSERT_EQ(2944,               karatsuba->multiply("46",        "64"));
+    ASSERT_EQ(53136,              karatsuba->multiply("123",       "432"));
+    ASSERT_EQ(5332114,            karatsuba->multiply("1234",      "4321"));
+    ASSERT_EQ(670592745,          karatsuba->multiply("12345",     "54321"));
+    ASSERT_EQ(80779853376,        karatsuba->multiply("123456",    "654321"));
+    ASSERT_EQ(9449772114007,      karatsuba->multiply("1234567",   "7654321"));
+    ASSERT_EQ(9449772114007,      karatsuba->multiply("1234567",   "7654321"));
+    ASSERT_EQ(1082152022374638,   karatsuba->multiply("12345678",  "87654321"));
 
 }
