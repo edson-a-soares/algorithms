@@ -11,7 +11,7 @@ Samples of [algorithms](https://en.wikipedia.org/wiki/Algorithm) implemented in 
 
 ### Standards and Style
 
-This code does not follow any specific **Coding Style Guidelines or Standard**.
+This code does not follow any specific **Coding Style Guidelines or Standard**.    
 But, it mixes different styles in a way that I could say it has been influenced by:
   * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html),
   * [PPP Style Guide](http://www.stroustrup.com/Programming/PPP-style-rev3.pdf)
