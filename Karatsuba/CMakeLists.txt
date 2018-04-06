@@ -1,8 +1,10 @@
-SET(ALGORITHM_NAME "Karatsuba")
+SET(ALGORITHM_NAME "karatsuba")
 SET(ALGORITHM_DIRECTORY "Karatsuba")
 
 set(CMAKE_C_COMPILER /usr/bin/gcc)
 set(CMAKE_CXX_COMPILER /usr/bin/g++)
+
+SET(CMAKE_SHARED_LIBRARY_PREFIX "")
 
 # It sets default to Release build type
 if(NOT CMAKE_BUILD_TYPE)

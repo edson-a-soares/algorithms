@@ -1,0 +1,53 @@
+language: cpp
+
+os: linux
+
+dist: trusty
+sudo: enabled
+
+cache:
+  - apt
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+
+    packages:
+      - gcc-snapshot
+      - gcc-6
+      - g++-6
+
+notifications:
+    email:
+      on_success: never  # default: change
+      on_failure: always # default: always
+
+before_install:
+  # It sets GCC 6 as the default version.
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+
+install:
+  # It makes available CMake 3.7.2
+  - cd $HOME
+  - wget https://cmake.org/files/v3.7/cmake-3.7.2.tar.gz
+  - tar -xf cmake-3.7.2.tar.gz
+  - cd cmake-3.7.2
+  - ./configure
+  - make && sudo make install
+
+  # It makes available Google Test
+  - sudo sudo apt-get install libgtest-dev
+  - cd /usr/src/gtest
+  - sudo cmake .
+  - sudo make
+  - sudo cp *.a /usr/lib
+
+script:
+  # It creates a separated CMake build directory for building the application.
+  - cd $HOME && sudo mkdir cmake-build && cd cmake-build
+  # It enables all parts of the application for building.
+  - sudo cmake $TRAVIS_BUILD_DIR -DCMAKE_BUILD_TYPE=Debug
+  # It compiles the application and run the tests.
+  - sudo cmake --build . --target all -- -j 2
+  - cd $TRAVIS_BUILD_DIR && ./travis/runtests.sh

@@ -1,4 +1,4 @@
-SET(TEST_UNIT "KaratsubaTests")
+SET(TEST_UNIT "tests")
 SET(TEST_ALGORITHM_DIRECTORY "Karatsuba")
 
 enable_testing()
