@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE.md)
+[![Build Status](https://travis-ci.org/edson-a-soares/algorithms.svg?branch=master)](https://travis-ci.org/edson-a-soares/algorithms)
 
 ## Introduction
 
