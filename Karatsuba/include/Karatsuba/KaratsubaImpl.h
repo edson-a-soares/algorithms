@@ -57,8 +57,8 @@ namespace Karatsuba {
         ///
         /// It receives two numbers with different amount of digits and it makes them the same size.
         ///
-        /// @param numberOne
-        /// @param numberTwo
+        /// @param numberOne The first participant of the operation.
+        /// @param numberTwo The second participant of the operation.
         ///
 
     std::string fillWithZeros(const std::string &number, long int finalSize);
