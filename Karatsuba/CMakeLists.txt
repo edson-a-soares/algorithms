@@ -34,4 +34,4 @@ add_library(${ALGORITHM_NAME} SHARED ${ALGORITHM_SOURCE_FILES})
 target_include_directories(${ALGORITHM_NAME} PUBLIC ${PROJECT_INCLUDE_DIR})
 
 # It handles the tests
-add_subdirectory(test)
+add_subdirectory(tests)

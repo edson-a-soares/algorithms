@@ -17,8 +17,8 @@
  *     Edson Araújo Soares
  */
 
-#ifndef Algorithms_KaratsubaImpl_INCLUDED
-#define Algorithms_KaratsubaImpl_INCLUDED
+#ifndef Algorithm_KaratsubaImpl_INCLUDED
+#define Algorithm_KaratsubaImpl_INCLUDED
 
 #include "Karatsuba/KaratsubaInterface.h"
 
