@@ -17,6 +17,7 @@ addons:
       - gcc-snapshot
       - gcc-6
       - g++-6
+      - google-mock
 
 notifications:
     email:
