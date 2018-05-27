@@ -9,6 +9,10 @@ Samples of [algorithms](https://en.wikipedia.org/wiki/Algorithm) implemented in 
 ### Mathematical
 
   * [Karatsuba algorithm for fast multiplication](Karatsuba)
+  
+### Sorting
+
+  * [Insertion Sort](InsertionSort)
 
 ### Standards and Style
 
