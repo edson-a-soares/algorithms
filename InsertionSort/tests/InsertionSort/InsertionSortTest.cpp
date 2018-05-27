@@ -1,4 +1,3 @@
-#include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "InsertionSort/InsertionSortInterface.h"
 #include "InsertionSort/InsertionSortImpl.h"

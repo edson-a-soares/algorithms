@@ -17,7 +17,6 @@ addons:
       - gcc-snapshot
       - gcc-6
       - g++-6
-      - google-mock
 
 notifications:
     email:
@@ -37,12 +36,23 @@ install:
   - ./configure
   - make && sudo make install
 
-  # It makes available Google Test
-  - sudo sudo apt-get install libgtest-dev
-  - cd /usr/src/gtest
+  # It makes available Google Mock Test
+  - cd $HOME
+  - sudo wget https://github.com/google/googletest/archive/release-1.8.0.tar.gz
+  - sudo tar -xvzf release-1.8.0.tar.gz --directory /usr/src
+  - sudo mv /usr/src/googletest-release-1.8.0 /usr/src/googletest
+  - ls -l /usr/src
+
+  # Handling Google Mock files
+  - cd /usr/src/googletest/googlemock
   - sudo cmake .
   - sudo make
-  - sudo cp *.a /usr/lib
+  - sudo cp *.a /usr/local/lib
+  - sudo ln -s /usr/src/googletest/googlemock/include/gmock/ /usr/include/gmock
+
+  # Handling Google Test files
+  - sudo cp gtest/*.a /usr/local/lib
+  - sudo ln -s /usr/src/googletest/googletest/include/gtest/ /usr/include/gtest
 
 script:
   # It creates a separated CMake build directory for building the application.
